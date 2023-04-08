@@ -1,0 +1,9 @@
+version: '3'
+services:
+  app:
+    build: docker/json-server/.
+    volumes:
+      - ./src:/src:cached
+    ports:
+      - "3000:3000"
+    command: npx json-server -H 0.0.0.0 db.json
